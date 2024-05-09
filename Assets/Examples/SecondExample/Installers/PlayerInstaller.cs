@@ -10,7 +10,7 @@ namespace Examples.SecondExample
         [SerializeField] private Transform _playerSpawnPoint;
         [SerializeField] private Player _playerPrefab;
         [SerializeField] private PlayerStatsConfig _playerStatsConfig;
-    
+        
         public override void InstallBindings()
         {
             BindConfig();
