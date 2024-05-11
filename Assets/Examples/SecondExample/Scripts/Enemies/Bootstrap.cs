@@ -1,11 +1,29 @@
+using System;
 using UnityEngine;
+using Zenject;
 
-public class Bootstrap : MonoBehaviour
+namespace Examples.SecondExample
 {
-    [SerializeField] private EnemySpawner _spawner;
-
-    private void Awake()
+    public class Bootstrap : MonoBehaviour
     {
-        _spawner.StartWork();
+        private EnemySpawner _spawner;
+
+        [Inject]
+        private void Construct(EnemySpawner spawner)
+        {
+            _spawner = spawner;
+        }
+    
+        private void Awake()
+        {
+            _spawner.StartWork();
+            // _spawner = new EnemySpawner();
+        }
+
+        private void Update()
+        {
+            _spawner.Update();
+        }
     }
 }
+

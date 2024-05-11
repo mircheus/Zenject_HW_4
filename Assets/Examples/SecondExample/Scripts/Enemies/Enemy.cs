@@ -17,14 +17,14 @@ public class Enemy : MonoBehaviour
         _health = health;
         _speed = speed;
 
-        Debug.Log($"??: {_health}, ????????: {_speed}");
+        Debug.Log($"HP: {_health}, Speed: {_speed}");
     }
+    
+    public void MoveTo(Vector3 position) => transform.position = position;
 
     private void Update()
     {
         Vector3 direction = (_target.Position - transform.position).normalized;
         transform.Translate(direction * _speed * Time.deltaTime);
-    }
-
-    public void MoveTo(Vector3 position) => transform.position = position;
+    } 
 }
