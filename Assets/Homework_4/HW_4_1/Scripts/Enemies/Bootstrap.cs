@@ -1,8 +1,7 @@
-using System;
 using UnityEngine;
 using Zenject;
 
-namespace Examples.SecondExample
+namespace Homework_4.Homework_4_1
 {
     public class Bootstrap : MonoBehaviour
     {
@@ -17,7 +16,6 @@ namespace Examples.SecondExample
         private void Awake()
         {
             _spawner.StartWork();
-            // _spawner = new EnemySpawner();
         }
 
         private void Update()
