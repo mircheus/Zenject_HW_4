@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace Homework_4.Homework_4_2
 {
@@ -9,6 +10,12 @@ namespace Homework_4.Homework_4_2
         [SerializeField] private Button _restart;
 
         private GameplayMediator _mediator;
+
+        [Inject]
+        private void Construct(GameplayMediator mediator)
+        {
+            _mediator = mediator;
+        }
         
         private void OnEnable()
         {

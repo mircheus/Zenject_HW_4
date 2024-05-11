@@ -1,21 +1,17 @@
 ﻿using System;
 using UnityEngine;
+using Zenject;
 
 namespace Homework_4.Homework_4_2
 {
     public class Bootstrap : MonoBehaviour
     {
-        [SerializeField] private GameplayMediator _mediator;
-        [SerializeField] private DefeatPanel _defeatPanel;
-        
         private Level _level;
 
-        private void Awake()
+        [Inject]
+        private void Construct(Level level)
         {
-            _level = new Level();
-            _mediator.Initialize(_level);
-            _defeatPanel.Initialize(_mediator);
-            _level.Start();
+            _level = level;
         }
 
         private void Update()
