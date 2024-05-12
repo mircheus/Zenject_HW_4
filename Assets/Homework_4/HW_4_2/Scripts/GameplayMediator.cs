@@ -10,7 +10,7 @@ namespace Homework_4.Homework_4_2
         private Level _level;
 
         [Inject]
-        public void Construct(Level level, DefeatPanel defeatPanel)
+        private void Construct(Level level, DefeatPanel defeatPanel)
         {
             _level = level;
             _defeatPanel = defeatPanel;

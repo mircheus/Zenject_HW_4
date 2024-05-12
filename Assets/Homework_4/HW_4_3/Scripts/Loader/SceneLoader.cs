@@ -13,7 +13,7 @@ namespace Homework_4.Homework_4_3
 
         public void Load(ModeLoadingData modeLoadingData)
         {
-            _zenjectSceneLoaderWrapper.Load(1, // TODO: Remove magic number
+            _zenjectSceneLoaderWrapper.Load((int)SceneID.GameplayLevel,
                 container =>
                 {
                     container.BindInstance(modeLoadingData).AsSingle();

@@ -1,60 +1,56 @@
 ﻿using System;
 using Homework_4.Homework_4_3;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
-namespace Homework_1.HW_1_4
+namespace Homework_4.Homework_4_3
 {
-    public class BalloonsMiniGame : MonoBehaviour
+    public class BalloonsMiniGame : MiniGame
     {
+        [SerializeField] private BalloonContainer _balloonContainer;
+
+        private IPointsCounter _pointsCounter;
+        private MiniGameModes _chosenGameMode;
+        
+        public override event Action GameFinished;
+        
         [Inject]
         private void Construct(ModeLoadingData modeLoadingData)
         {
-            Debug.Log($"Selected mode: {modeLoadingData.Mode}");
+            _chosenGameMode = modeLoadingData.Mode;
+            SetGameMode(_chosenGameMode);
+            Debug.Log($"BALLOON CITY: Selected mode: {modeLoadingData.Mode}");
         }
-        // [SerializeField] private BalloonContainer _balloonContainer;
-        // [SerializeField] private ChooseModePanel _chooseModePanel;
-        // [SerializeField] private WinPanel _winPanel;
-        //
-        // private IPointsCounter _pointsCounter;
-        //
-        // private void Awake()
-        // {
-        //     _chooseModePanel.gameObject.SetActive(true);
-        //     _chooseModePanel.buttonClicked += OnButtonClicked;
-        //     // _balloonContainer.SetPointsCounter(new ClickByColorMode(_balloonContainer));
-        //     // _balloonContainer.PointsCounter.GameFinished += OnGameFinished;
-        // }
-        //
-        // private void OnButtonClicked(MiniGameModes gameMode)
-        // {
-        //     switch (gameMode)
-        //     {
-        //         case MiniGameModes.ClickByColorMode:
-        //             _balloonContainer.SetPointsCounter(new ClickByColorMode(_balloonContainer));
-        //             break;
-        //         
-        //         case MiniGameModes.ClickAllMode:
-        //             _balloonContainer.SetPointsCounter(new ClickAllMode(_balloonContainer));
-        //             break;
-        //         
-        //         default:
-        //             throw new ArgumentOutOfRangeException();
-        //     }
-        //     
-        //     _balloonContainer.PointsCounter.GameFinished += OnGameFinished;
-        //     _chooseModePanel.gameObject.SetActive(false);
-        // }
-        //
-        // private void OnDisable()
-        // {
-        //     _balloonContainer.PointsCounter.GameFinished -= OnGameFinished;
-        //     _chooseModePanel.buttonClicked -= OnButtonClicked;
-        // }
-        //
-        // private void OnGameFinished()
-        // {
-        //     _winPanel.gameObject.SetActive(true);
-        // }
+
+        private void SetGameMode(MiniGameModes gameMode)
+        {
+            switch (gameMode)
+            {
+                case MiniGameModes.ClickByColorMode:
+                    _balloonContainer.SetPointsCounter(new ClickByColorMode(_balloonContainer));
+                    break;
+                
+                case MiniGameModes.ClickAllMode:
+                    _balloonContainer.SetPointsCounter(new ClickAllMode(_balloonContainer));
+                    break;
+                
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+            
+            _balloonContainer.PointsCounter.GameFinished += OnGameFinished;
+        }
+        
+        private void OnDisable()
+        {
+            _balloonContainer.PointsCounter.GameFinished -= OnGameFinished;
+        }
+        
+        private void OnGameFinished()
+        {
+            Debug.Log("BALLOON CITY: Game finished!");
+            GameFinished?.Invoke();
+        }
     }
 }

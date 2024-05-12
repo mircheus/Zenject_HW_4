@@ -16,14 +16,9 @@
             _levelLoader.Load(modeLoadingData);
         }
 
-        public void GoToLevelSelectionMenu()
+        public void GoToModeSelectionMenu()
         {
-            _simpleSceneLoader.Load(SceneID.LevelSelection);
-        }
-        
-        public void GoToMainMenu()
-        {
-            _simpleSceneLoader.Load(SceneID.MainMenu);
+            _simpleSceneLoader.Load(SceneID.ModeSelection);
         }
     }
 }

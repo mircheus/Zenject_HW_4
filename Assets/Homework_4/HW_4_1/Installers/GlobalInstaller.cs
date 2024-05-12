@@ -1,7 +1,6 @@
-﻿using Homework_4.Homework_4_3;
-using Zenject;
+﻿using Zenject;
 
-namespace Homework_4.Homework_4_1
+namespace Homework_4.Homework_4_3
 {
     public class GlobalInstaller : MonoInstaller
     {

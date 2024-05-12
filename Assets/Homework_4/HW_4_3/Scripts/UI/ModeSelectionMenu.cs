@@ -1,5 +1,4 @@
 ﻿using System;
-using Homework_1.HW_1_4;
 using UnityEngine;
 using Zenject;
 
@@ -31,7 +30,6 @@ namespace Homework_4.Homework_4_3
         
         private void OnModeSelected(MiniGameModes mode)
         {
-            Debug.Log("Selected mode: " + mode);
             _sceneLoadMediator.GoToGameplayScene(new ModeLoadingData(mode));
         }
     }

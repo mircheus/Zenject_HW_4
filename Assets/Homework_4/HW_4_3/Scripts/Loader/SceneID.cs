@@ -2,8 +2,7 @@
 {
     public enum SceneID
     {
-        MainMenu = 0,
-        LevelSelection = 1,
-        GameplayLevel = 2
+        ModeSelection = 0,
+        GameplayLevel = 1
     }
 }
