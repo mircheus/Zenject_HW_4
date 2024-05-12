@@ -1,6 +1,6 @@
 ﻿using Zenject;
 
-namespace Homework_4.Homework_4_3
+namespace Homework_4.Homework_4_3 // Global installer используется только в Homework_4_3
 {
     public class GlobalInstaller : MonoInstaller
     {
