@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEngine;
 using Zenject;
 
 namespace Homework_4.Homework_4_2
@@ -16,13 +15,7 @@ namespace Homework_4.Homework_4_2
             _defeatPanel = defeatPanel;
             _level.Defeat += OnLevelDefeat;
         }
-        
-        // public void Initialize(Level level)
-        // {                           
-        //     _level = level;
-        //     _level.Defeat += OnLevelDefeat;
-        // }
-        
+
         public void RestartLevel()
         {
             _defeatPanel.Hide();

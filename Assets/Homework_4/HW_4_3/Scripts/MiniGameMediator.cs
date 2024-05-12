@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEngine;
 using Zenject;
 
 namespace Homework_4.Homework_4_3
@@ -13,7 +12,6 @@ namespace Homework_4.Homework_4_3
         [Inject]
         private void Construct(MiniGame miniGame, WinMenu winMenu, SceneLoadMediator sceneLoadMediator)
         {
-            Debug.Log("Mediator initialized! MiniGame");
             _miniGame = miniGame;
             _winMenu = winMenu;
             _sceneLoadMediator = sceneLoadMediator;
@@ -28,6 +26,7 @@ namespace Homework_4.Homework_4_3
         
         public void ReturnToModeSelectionMenu()
         {
+            _winMenu.Hide();
             _sceneLoadMediator.GoToModeSelectionMenu();
         }
         

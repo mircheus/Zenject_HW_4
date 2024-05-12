@@ -20,7 +20,6 @@ namespace Homework_4.Homework_4_3
         {
             _chosenGameMode = modeLoadingData.Mode;
             SetGameMode(_chosenGameMode);
-            Debug.Log($"BALLOON CITY: Selected mode: {modeLoadingData.Mode}");
         }
 
         private void SetGameMode(MiniGameModes gameMode)
@@ -49,7 +48,6 @@ namespace Homework_4.Homework_4_3
         
         private void OnGameFinished()
         {
-            Debug.Log("BALLOON CITY: Game finished!");
             GameFinished?.Invoke();
         }
     }
