@@ -6,12 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Examples/Loader/Scenes/MainMenuScene.unity
-    guid: efe2abd1059f9c94789c62f854abdfcd
+    path: Assets/Homework_4/HW_4_3/Scenes/ModeSelectionScene.unity
+    guid: 14bde3adcc89335479e92534b7a481c1
   - enabled: 1
-    path: Assets/Examples/Loader/Scenes/LevelSelectionScene.unity
-    guid: 6d030ddcd82ea6442a7557c00d1dd97a
-  - enabled: 1
-    path: Assets/Examples/Loader/Scenes/GameplayScene.unity
-    guid: 589511bf69c88d3468c9cc232fdde61a
+    path: Assets/Homework_4/HW_4_3/Scenes/GameplayScene.unity
+    guid: 6803e88278a0b27468b43939a4b8b29a
   m_configObjects: {}
